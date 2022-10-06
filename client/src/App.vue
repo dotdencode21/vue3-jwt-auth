@@ -1,14 +1,17 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-        <!-- <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink> -->
-
-  <!-- <RouterView /> -->
+  <div class="wrapper">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
-
+  .wrapper {
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 860px;
+  }
 </style>
