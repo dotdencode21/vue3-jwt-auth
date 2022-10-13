@@ -5,12 +5,12 @@ import * as bcrypt from "bcrypt";
 
 @Injectable()
 export class AuthService {
-  private fakeDb: any = [];
+  private fakeDb: UserDto[] = [];
 
   constructor(private readonly jwtService: JwtService) {}
 
   async signUp(User: UserDto) {
-    const candidate = this.fakeDb.find((user: UserDto) => user.id === User.id);
+    const candidate = this.fakeDb.find((user: UserDto) => user.email === User.email);
 
     if (candidate) return;
 
@@ -18,7 +18,7 @@ export class AuthService {
 
     this.fakeDb.push({ ...User, password: hashPassword });    
 
-    const payload = { id: User.id };
+    const payload = { name: User.name, email: User.email };    
 
     return {
       token: this.jwtService.sign(payload)
