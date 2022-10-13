@@ -15,3 +15,4 @@ import { RouterView } from "vue-router";
     max-width: 860px;
   }
 </style>
+

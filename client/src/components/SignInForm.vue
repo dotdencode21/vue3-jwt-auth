@@ -1,24 +1,10 @@
 <script setup>
-  import { reactive } from "vue";
   import { RouterLink } from "vue-router";
 
-  const state = reactive({
-    email: "",
-    password: ""
+  const props = defineProps({
+    state: { type: Object },
+    signIn: { type: Function }
   });
-
-  const signIn = async () => {
-    const response = await fetch("http://localhost:3000/api/sign-in", {
-      method: "POST",
-      body: JSON.stringify(state),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
-    
-    const data = await response.json();
-    console.log(data);
-  }
 </script>
 
 <template>
@@ -110,5 +96,9 @@
 
   .sign-up-tip {
     margin-top: 10px;
+  }
+
+  .sign-up-tip span {
+    padding-right: 5px;
   }
 </style>

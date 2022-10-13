@@ -1,26 +1,8 @@
 <script setup>
-  import { reactive } from "vue";
-
-  const state = reactive({
-    id: Math.round(Math.random() * 10000),
-    name: "",
-    surname: "",
-    email: "",
-    password: ""
+  const props = defineProps({
+    state: { type: Object },
+    signUp: { type: Function }
   });
-
-  const signUp = async () => {
-    const response = await fetch("http://localhost:3000/api/sign-up", {
-      method: "POST",
-      body: JSON.stringify(state),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
-    const { token } = await response.json();
-    
-    localStorage.setItem("token", token);
-  }
 </script>
 
 <template>
