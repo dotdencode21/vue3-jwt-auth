@@ -3,8 +3,11 @@
 
   const props = defineProps({
     state: { type: Object },
-    signIn: { type: Function }
   });
+
+  const emit = defineEmits(["sign-in"]);
+
+  const signIn = () => emit("sign-in");
 </script>
 
 <template>

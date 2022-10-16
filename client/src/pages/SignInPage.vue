@@ -18,5 +18,5 @@
 </script>
 
 <template>
-  <SignInForm :sign-in="handleSignIn" :state="state" />
+  <SignInForm @sign-in="handleSignIn" :state="state" />
 </template>

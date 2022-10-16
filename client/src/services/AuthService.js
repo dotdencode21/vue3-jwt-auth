@@ -8,7 +8,7 @@ export const signUp = async (body) => {
   });
   
   const { token } = await response.json();
-    
+  
   localStorage.setItem("token", token);
 } 
 

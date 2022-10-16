@@ -21,6 +21,6 @@
 </script>
   
 <template>
-  <SignUpForm :sign-up="handleSignUp" :state="state" />
+  <SignUpForm @sign-up="handleSignUp" :state="state" />
 </template>
   

@@ -1,8 +1,11 @@
 <script setup>
   const props = defineProps({
     state: { type: Object },
-    signUp: { type: Function }
   });
+
+  const emit = defineEmits(["sign-up"]);
+
+  const signUp = () => emit("sign-up");
 </script>
 
 <template>
