@@ -11,7 +11,7 @@ export class AuthMiddleware implements NestMiddleware {
   async use(req: Request, res: Response, next: NextFunction) {
     try {
       const formattedToken: string = req.headers["authorization"].split(" ")[1]; 
-      const isValidToken = await this.JwtService.verifyAsync(formattedToken);
+      const isValidToken = await this.JwtService.verifyAsync(formattedToken, { publicKey: "SECRET_KEY" });
 
       if (isValidToken) next();
     } catch (e) {
